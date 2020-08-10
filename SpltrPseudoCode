@@ -1,0 +1,23 @@
+1. Present the user with a field to enter the amount of persons in the group
+
+2. Let the user enter the total amount for the bill in the next field.
+
+  //If either field is empty or has characters in it or any non numbers, throw an alert up to state that the fields needs to have a number value
+
+3. Present the user with a slider/field. 
+
+  // The slider or field will be preset at a 20% tip, the user can then interact with the slider or field to change the percentage value.
+
+4. Add an event listener to the submit button for user click
+
+5. On user click:
+
+  // Clear the fields
+
+  // Add the users submitted values to a database and render the values below the application
+
+6. Create an event listener on button click to remove stored data
+
+  // Let user remove/clear the bill once all members have paid their portion.
+
+  // Ask user to confirm removal
