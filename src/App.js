@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Form from "./Form";
-import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -12,8 +11,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Spltr</h1>
+      <div className="wrapper">
+        <h1 className="logoName">Spl|tr</h1>
         <p>Bill Splitting App</p>
         <Form />
       </div>
