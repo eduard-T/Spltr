@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import firebase from "./firebase";
 
 class inputForm extends Component {
   constructor() {
@@ -8,7 +7,6 @@ class inputForm extends Component {
       group: "",
       amount: "",
       tip: 1.1,
-      total: "",
     };
   }
 
@@ -18,19 +16,19 @@ class inputForm extends Component {
     });
   };
 
-  getUserInput = (event) => {
-    event.preventDefault();
+  // getUserInput = (event) => {
+  //   event.preventDefault();
 
-    const result = (this.state.amount / this.state.group) * this.state.tip;
+  //   const result = (this.state.amount / this.state.group) * this.state.tip;
 
-    this.setState({
-      total: result.toFixed(2),
-    });
-  };
+  //   this.setState({
+  //     total: result.toFixed(2),
+  //   });
+  // };
 
   render() {
     return (
-      <form className="tipApp" action="submit" method="post">
+      <form className="tipApp">
         <div>
           <label htmlFor="groupSize">How many?</label>
           <input
@@ -40,7 +38,7 @@ class inputForm extends Component {
             value={this.state.group}
             min="1"
             step="1"
-            placeholder="Add the number of people"
+            placeholder="Add the group size"
             name="group"
             required
           />
@@ -75,9 +73,9 @@ class inputForm extends Component {
           />
         </div>
 
-        <button onClick={this.getUserInput}>Calculate</button>
-
-        <h3>{this.state.total}</h3>
+        <button onClick={(event) => this.props.getTotal(event, this.state)}>
+          Calculate
+        </button>
       </form>
     );
   }
