@@ -22,9 +22,11 @@ class App extends Component {
       const billData = [];
 
       for (const bill in firebaseData) {
+        console.log(firebaseData[bill]);
         billData.push({
           id: bill,
-          value: firebaseData[bill],
+          name: firebaseData[bill].name,
+          value: firebaseData[bill].result,
         });
       }
       this.setState({
@@ -35,26 +37,39 @@ class App extends Component {
 
   handleClick = (event, billInfo) => {
     event.preventDefault();
-    console.log(billInfo.total);
+    console.log(billInfo);
     const dbRef = firebase.database().ref();
 
-    const result = (billInfo.amount / billInfo.group) * billInfo.tip;
-    dbRef.push(result.toFixed(2));
+    const result =
+      (billInfo.amount / billInfo.group) * (billInfo.tip / 100 + 1);
+    // dbRef.push(result.toFixed(2));
+    dbRef.push({
+      result: result.toFixed(2),
+      name: billInfo.name,
+    });
 
     this.setState({
       total: result.toFixed(2),
     });
   };
 
+  deleteBill = (billId) => {
+    const dbRef = firebase.database().ref();
+
+    dbRef.child(billId).remove();
+  };
+
   render() {
     return (
       <div className="wrapper">
         <h1 className="logoName">Spl|tr</h1>
-        <p>Bill Splitting App</p>
+        <h3>Bill Splitting App</h3>
 
         <Form getTotal={this.handleClick} />
-        {this.state.total}
-        <Bills bills={this.state.bills} />
+        <h2>${this.state.total}</h2>
+
+        <h3>Previous Bills</h3>
+        <Bills receipts={this.state.bills} delete={this.deleteBill} />
       </div>
     );
   }

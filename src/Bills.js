@@ -2,11 +2,18 @@ import React from "react";
 
 const Bills = (props) => {
   return (
-    <section>
-      {props.bills.map((bill) => {
-        return <h3 key={bill.id}>{bill.value}</h3>;
+    <ul>
+      {/* INCLUDE ERROR HANDLING */}
+      {props.receipts.map((bill) => {
+        return (
+          <li key={bill.id}>
+            <p>{bill.name}</p>
+            <p>${bill.value}</p>
+            <button onClick={() => props.delete(bill.id)}>x</button>
+          </li>
+        );
       })}
-    </section>
+    </ul>
   );
 };
 

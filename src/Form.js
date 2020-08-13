@@ -4,9 +4,10 @@ class inputForm extends Component {
   constructor() {
     super();
     this.state = {
+      name: "",
       group: "",
       amount: "",
-      tip: 1.1,
+      tip: "",
     };
   }
 
@@ -16,21 +17,23 @@ class inputForm extends Component {
     });
   };
 
-  // getUserInput = (event) => {
-  //   event.preventDefault();
-
-  //   const result = (this.state.amount / this.state.group) * this.state.tip;
-
-  //   this.setState({
-  //     total: result.toFixed(2),
-  //   });
-  // };
-
   render() {
     return (
       <form className="tipApp">
         <div>
-          <label htmlFor="groupSize">How many?</label>
+          <label htmlFor="groupSize">Name </label>
+          <input
+            onChange={this.handleChange}
+            type="text"
+            id="groupName"
+            value={this.state.name}
+            placeholder="Name your group"
+            name="name"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="groupSize">How many? </label>
           <input
             onChange={this.handleChange}
             type="number"
@@ -45,7 +48,7 @@ class inputForm extends Component {
         </div>
 
         <div>
-          <label htmlFor="billAmount">How much?</label>
+          <label htmlFor="billAmount">How much? </label>
           <input
             onChange={this.handleChange}
             type="number"
@@ -60,21 +63,21 @@ class inputForm extends Component {
         </div>
 
         <div>
-          <label htmlFor="tipAmount">Tip?</label>
+          <label htmlFor="tipAmount">Tip? </label>
           <input
             onChange={this.handleChange}
-            type="range"
+            type="number"
             id="tipAmount"
             value={this.state.tip}
-            min="1.1"
-            max="1.5"
-            step="0.05"
+            min="10"
+            step="5"
+            placeholder="Add the tip %"
             name="tip"
           />
         </div>
 
         <button onClick={(event) => this.props.getTotal(event, this.state)}>
-          Calculate
+          Split it!
         </button>
       </form>
     );
