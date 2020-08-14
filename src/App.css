@@ -222,6 +222,8 @@ html {
   overflow: hidden;
 }
 
+/* === STRIPPING === */
+
 body,
 h1,
 h2,
@@ -242,13 +244,11 @@ dd {
   padding: 0;
 }
 
-.wrapper {
-  max-width: 1000px;
-  width: 90%;
-  margin: 0 auto;
-}
+/* === GOOGLE FONT IMPORT === */
 
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&family=Teko:wght@700&display=swap");
+
+/* === LOGO ANIMATION SETUP === */
 
 @keyframes logoAnimation {
   0% {
@@ -259,12 +259,20 @@ dd {
   40%,
   60%,
   80% {
-    letter-spacing: 0.5em;
+    letter-spacing: 0.1em;
   }
 
   100% {
     letter-spacing: normal;
   }
+}
+
+/* === GLOBAL STYLING === */
+
+.wrapper {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 html {
@@ -273,11 +281,20 @@ html {
 
 body {
   background: url(./images/crossedStripes.png);
-  text-align: center;
   font-size: 2.5rem;
   color: whitesmoke;
   text-shadow: 0 0 5px #000;
   font-family: "Quicksand", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* === LOGO === */
+
+.logoName {
+  animation: logoAnimation 1.5s ease-in-out 1s both;
 }
 
 h1 {
@@ -286,26 +303,85 @@ h1 {
   font-family: "Teko", sans-serif;
   text-transform: uppercase;
   text-shadow: 0 0 7px black;
-  margin: 20px auto;
-}
-
-h2,
-h3 {
   margin: 20px 0;
 }
 
-.logoName {
-  animation: logoAnimation 1.5s ease-in-out 1s both;
+h1,
+h2,
+h3 {
+  margin: 20px 0;
+  text-align: center;
 }
+
+/* === FORM === */
 
 .tipApp {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  max-width: 600px;
+  margin: 40px auto;
 }
 
 .tipApp div {
-  margin: 10px 0;
+  margin: 10px 50px 10px 0;
+  text-align: right;
+}
+
+.tipApp label,
+.tipApp i {
+  margin-right: 10px;
+}
+
+.tipApp .icon {
+  color: rgb(192, 255, 51);
+}
+
+.heart {
+  color: rgb(247, 31, 96);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 280px;
+  background: transparent;
+  border: 2px solid white;
+  padding-left: 5px;
+  border-radius: 5px;
+  color: rgb(192, 255, 51);
+  font-family: "Quicksand", sans-serif;
+}
+
+.formButton {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  width: calc(50% - 40px);
+  margin: 0 20px 30px;
+  padding: 25px 50px;
+  color: rgb(192, 255, 51);
+  background-color: rgb(132, 40, 245);
+  border: none;
+  position: relative;
+  top: 0;
+  border-radius: 5px;
+  box-shadow: 0 10px 0 rgb(79, 25, 145);
+  transition: all 0.2s;
+}
+
+.formButton:focus,
+.formButton:active {
+  top: 5px;
+  box-shadow: 0 5px 0 rgb(79, 25, 145);
+}
+
+/* === PAST LIST ITEMS === */
+
+.dataHeader {
+  margin-top: 150px;
+}
+
+.dataHeader span {
+  border-bottom: 3px solid rgb(192, 255, 51);
 }
 
 ul {
@@ -315,9 +391,45 @@ ul {
 }
 
 ul li {
-  border: 3px solid white;
-  width: 150px;
+  border: 3px solid rgb(132, 40, 245);
+  width: 450px;
   padding: 40px 0;
   margin: 20px;
+  text-align: center;
   list-style: none;
+  position: relative;
+}
+
+ul li p {
+  padding: 10px;
+}
+
+.remove {
+  border: none;
+  background: none;
+  text-shadow: 0 0 10px black;
+  color: red;
+  position: absolute;
+  top: 7px;
+  right: 0;
+}
+
+/* === MEDIA QUERIES === */
+
+@media (max-width: 628px) {
+  .tipApp div {
+    margin: 10px auto;
+  }
+
+  label {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .formButton {
+    display: block;
+    width: 100%;
+    margin: 40px 0;
+  }
 }
