@@ -320,7 +320,7 @@ h3 {
   flex-direction: column;
   flex-wrap: wrap;
   max-width: 600px;
-  margin: 40px auto;
+  margin: 60px auto;
 }
 
 .tipApp div {
@@ -343,7 +343,6 @@ h3 {
 
 input[type="text"],
 input[type="number"] {
-  width: 280px;
   background: transparent;
   border: 2px solid white;
   padding-left: 5px;
@@ -368,6 +367,10 @@ input[type="number"] {
   transition: all 0.2s;
 }
 
+.formButton:hover {
+  letter-spacing: 4px;
+}
+
 .formButton:focus,
 .formButton:active {
   top: 5px;
@@ -388,6 +391,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 40px 0;
 }
 
 ul li {
@@ -407,11 +411,18 @@ ul li p {
 .remove {
   border: none;
   background: none;
-  text-shadow: 0 0 10px black;
-  color: red;
+  text-shadow: 0 0 3px black;
+  color: whitesmoke;
   position: absolute;
   top: 7px;
   right: 0;
+  transition: all 0.1s;
+}
+
+.remove:focus,
+.remove:hover {
+  color: red;
+  text-shadow: 0 0 1px black;
 }
 
 /* === MEDIA QUERIES === */
@@ -425,6 +436,11 @@ ul li p {
     display: block;
     text-align: center;
     padding-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
   }
 
   .formButton {

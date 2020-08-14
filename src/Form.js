@@ -46,7 +46,7 @@ class inputForm extends Component {
               type="text"
               id="groupName"
               value={this.state.name}
-              maxLength="14"
+              maxLength="15"
               placeholder="Name your group"
               name="name"
             />
