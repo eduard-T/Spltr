@@ -106,11 +106,16 @@ class inputForm extends Component {
           </div>
         </div>
 
-        <button className="formButton clear" onClick={this.clearForm}>
+        <button
+          type="reset"
+          className="formButton clear"
+          onClick={this.clearForm}
+        >
           Reset
         </button>
 
         <button
+          type="submit"
           className="formButton submit"
           // Pass the users provided data to the main component on button click
           onClick={(event) => this.props.getTotal(event, this.state)}

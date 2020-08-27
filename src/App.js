@@ -44,7 +44,6 @@ class App extends Component {
   // Create a method to attach to button click
   handleClick = (event, billInfo) => {
     event.preventDefault();
-
     // Call the database
     const dbRef = firebase.database().ref();
 
