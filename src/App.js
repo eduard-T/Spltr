@@ -52,7 +52,7 @@ class App extends Component {
       (billInfo.amount / billInfo.group) * (billInfo.tip / 100 + 1);
 
     // If the required fields are empty or the total is NaN, display an alert, else display the result and push the total to the state an database
-    if (result) {
+    if (result > 0) {
       dbRef.push({
         result: result.toFixed(2),
         name: billInfo.name,
@@ -61,7 +61,7 @@ class App extends Component {
         total: result.toFixed(2),
       });
     } else {
-      alert("Please fill all forms!");
+      alert("This bill cannot exist!");
     }
   };
 
