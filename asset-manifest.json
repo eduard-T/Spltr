@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Spltr/static/css/main.98128585.css",
+    "main.js": "/Spltr/static/js/main.d9b115a4.js",
+    "index.html": "/Spltr/index.html",
+    "main.98128585.css.map": "/Spltr/static/css/main.98128585.css.map",
+    "main.d9b115a4.js.map": "/Spltr/static/js/main.d9b115a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98128585.css",
+    "static/js/main.d9b115a4.js"
+  ]
+}
