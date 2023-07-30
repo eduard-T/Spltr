@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spltr - Bill Splitting App
 
-## Available Scripts
+A simple bill splitting application, recently upgraded, that works with any number of people. Spltr will take your group size, the bill total, tip percentage, and split the bill evenly between all members. Historical bills are saved and can be removed.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Setup](#setup)
+- [Contact](#contact)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Driver Manager was built using [Node v20.1.0] and uses the following technologies:
 
-### `npm test`
+- React - v18.2.0
+- Firebase - v10.1.0
+- npm - v9.6.4
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- New bills can be calculated with the location, total, and group size
+- Previous bills are stored in firebase with the ability to remove them
+- Fully responsive and clean UI design
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Follow the steps below to get started with this project's development environment:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install the latest version of npm
 
-### `npm run eject`
+```
+$ npm install -g npm
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Install [Node 20.1.0](https://nodejs.org/en/download/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Clone this repository and navigate into it
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+$ git clone https://github.com/eduard-T/Spltr.git
+$ git cd Spltr
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Install the project's dependencies
 
-## Learn More
+```
+$ npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Start the application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ npm start
+```
 
-### Code Splitting
+You're ready to use the app! :balance_scale::moneybag:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Known Issues
 
-### Analyzing the Bundle Size
+- Saved bills are public
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Contact
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Created by [@eduard-T](https://eduardtupy.co/) - Visit my portfolio!
