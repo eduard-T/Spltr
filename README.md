@@ -1,4 +1,4 @@
-# Spltr - Bill Splitting App
+# Spltr
 
 A bill splitting application, recently upgraded, that works with any number of people. Spltr will take your group size, the bill total, tip percentage, and split the bill evenly between all members. Historical bills are saved and can be removed.
 
