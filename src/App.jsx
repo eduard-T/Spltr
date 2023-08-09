@@ -70,10 +70,12 @@ function App() {
   // Populate the page
   return (
     <div className="wrapper">
-      <h1 className="logoName">Spl|tr</h1>
-      <h3>Bill Splitting App</h3>
+      <div className="formContainer">
+        <h1 className="logoName">Spl|tr</h1>
+        <h3>Bill Splitting App</h3>
 
-      <InputForm getTotal={handleClick} />
+        <InputForm getTotal={handleClick} />
+      </div>
       
       {total > 0 && splitTotal > 0 && (
         <div className="totalContainer" ref={resultRef}>
